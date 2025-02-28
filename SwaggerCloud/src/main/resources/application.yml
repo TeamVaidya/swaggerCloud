@@ -1,0 +1,34 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: vault
+          uri: https://userauth-production-61c5.up.railway.app  # Changed to HTTPS
+          predicates:
+            - Path=/project1/**
+          filters:
+            - StripPrefix=1
+        - id: ums
+          uri: https://ums-production.up.railway.app
+          predicates:
+            - Path=/project2/**
+          filters:
+            - StripPrefix=1
+        - id: slot
+          uri: https://slot-production.up.railway.app
+          predicates:
+            - Path=/project3/**
+          filters:
+            - StripPrefix=1
+        - id: patient
+          uri: https://patient-production-be15.up.railway.app
+          predicates:
+            - Path=/project4/**
+          filters:
+            - StripPrefix=1
+        - id: prescription
+          uri: https://prescription-production-39f5.up.railway.app
+          predicates:
+            - Path=/project5/**
+          filters:
+            - StripPrefix=1
