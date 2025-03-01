@@ -27,7 +27,7 @@ spring:
           filters:
             - StripPrefix=1
         - id: prescription
-          uri: https://prescription-production-39f5.up.railway.app
+          uri: prescription-production-035b.up.railway.app
           predicates:
             - Path=/project5/**
           filters:
